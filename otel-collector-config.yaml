@@ -10,7 +10,8 @@ exporters:
   otlphttp/jaeger:
     endpoint: http://jaeger:4318
 
-pipelines:
-  traces:
-    receivers: [otlp]
-    exporters: [otlphttp/jaeger]
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [otlphttp/jaeger]
