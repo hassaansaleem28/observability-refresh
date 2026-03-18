@@ -38,25 +38,6 @@ def slow_request(request):
         "status": "success"
     })
 
-
-def random_outcome(request):
-    delay = random.uniform(0.1, 0.8)
-    time.sleep(delay)
-
-    if random.random() < 0.35:
-        return JsonResponse({
-            "message": "Random failure for trace testing",
-            "delay": round(delay, 2),
-            "status": "error"
-        }, status=500)
-
-    return JsonResponse({
-        "message": "Random success",
-        "delay": round(delay, 2),
-        "status": "success"
-    })
-
-
 def force_error(request):
     return JsonResponse({
         "message": "Intentional error response for Jaeger",
