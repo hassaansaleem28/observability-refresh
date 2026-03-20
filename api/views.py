@@ -43,15 +43,3 @@ def force_error(request):
         "message": "Intentional error response for Jaeger",
         "status": "error"
     }, status=500)
-
-
-def user_profile(request, user_id):
-    delay = random.uniform(0.05, 0.25)
-    time.sleep(delay)
-
-    return JsonResponse({
-        "user_id": user_id,
-        "message": f"Fetched profile for user {user_id}",
-        "processing_time": round(delay, 2),
-        "status": "success"
-    })

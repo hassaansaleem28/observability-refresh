@@ -5,7 +5,6 @@ from api.views import (
     force_error,
     hello_world,
     slow_request,
-    user_profile,
 )
 
 urlpatterns = [
@@ -14,5 +13,4 @@ urlpatterns = [
     path('api/ping/', fast_ping),
     path('api/slow/', slow_request),
     path('api/error/', force_error),
-    path('api/users/<int:user_id>/', user_profile),
 ]
